@@ -1,18 +1,25 @@
 {
-    "name": "JATE",
+    "name": "jate",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon server.js --ignore client"
+      "start": "cd server && npm start",
+      "build": "cd client && npm run build",
+      "server": "cd server && npm start",
+      "client": "cd client && npm start",
+      "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+      "install": "cd client && npm install && cd ../server && npm install"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.1"
+      "express": "^4.17.1",
+      "if-env": "^1.0.4"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4"
+      "concurrently": "^5.2.0",
+      "nodemon": "^2.0.4"
     }
-}
+  }
